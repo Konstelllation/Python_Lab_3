@@ -7,7 +7,7 @@ def test():
 
 
 def negative(message):
-print(f'Число {message} отрицательное')
+    print(f'Число {message} отрицательное')
 
 
 def positive(message):
