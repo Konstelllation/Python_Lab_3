@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 import sys
 from datetime import date
 
@@ -115,7 +113,5 @@ def main():
             print("exit - завершить работу с программой.")
         else:
             print(f"Неизвестная команда {command}", file=sys.stderr)
-
-
 if __name__ == '__main__':
     main()
