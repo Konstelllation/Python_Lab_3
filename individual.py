@@ -9,6 +9,7 @@ def get_student():
     group = input("Номер группы: ")
     score = input("Успеваемость: ")
 
+
     # Создать словарь.
     return {
         'fio': fio,
