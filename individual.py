@@ -8,8 +8,7 @@ def get_student():
     fio = input("Фамилия и инициалы: ")
     group = input("Номер группы: ")
     score = input("Успеваемость: ")
-
-
+    score = score.split(' ')
     # Создать словарь.
     return {
         'fio': fio,
@@ -29,11 +28,11 @@ def display_students(staff):
             '-' * 4,
             '-' * 30,
             '-' * 20,
-            '-' * 20
+            '-' * 25
         )
         print(line)
         print(
-            '| {:^4} | {:^30} | {:^20} | {:^20} |'.format(
+            '| {:^4} | {:^30} | {:^20} | {:^25} |'.format(
                 "No",
                 "Фамилия и инициалы",
                 "Номер группы",
@@ -49,7 +48,7 @@ def display_students(staff):
                     idx,
                     student.get('fio', ''),
                     student.get('group', 0),
-                    student.get('score', '')
+                    '{}'.format(student.get('score', ''))
                 )
             )
 
@@ -66,7 +65,7 @@ def select_students(staff):
     # Сформировать список студентов.
     result = []
     for student in staff:
-        if 2 in list(map(int, student.get('score', '').split())):
+        if 2 in list(map(int, student.get('score', ''))):
             result.append(student)
 
     # Возвратить список выбранных студентов.
